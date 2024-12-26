@@ -1864,3 +1864,11 @@ textarea.form-input::-webkit-resizer { display: none; }
   .timeline-text { max-width: 700px; }
 
 }
+
+
+/* Add this to your existing CSS file */
+
+/* Hide the "Select category" button */
+.filter-select {
+  display: none;
+}

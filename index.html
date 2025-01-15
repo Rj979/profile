@@ -27,6 +27,7 @@
   <noscript>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
   </noscript>
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   
 </head>
@@ -370,6 +371,7 @@
           </ol>
 
         </section>
+        
 <!-- 
         <section class="timeline">
 
@@ -495,7 +497,9 @@
           </div>
 
   </main>
-
+  <footer class="footer">
+    <p class="footer-text">Made with ❤️ by RJ</p>
+  </footer>
   <!--
     - custom js link
   -->
@@ -507,6 +511,47 @@
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js" async></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js" async></script>
 
+  <!-- Add this to your existing index.html file -->
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const scrollElements = document.querySelectorAll('.scroll-animation');
+
+      const elementInView = (el, dividend = 1) => {
+        const elementTop = el.getBoundingClientRect().top;
+
+        return (
+          elementTop <= (window.innerHeight || document.documentElement.clientHeight) / dividend
+        );
+      };
+
+      const displayScrollElement = (element) => {
+        element.classList.add('visible');
+        element.classList.remove('hidden');
+      };
+
+      const hideScrollElement = (element) => {
+        element.classList.add('hidden');
+        element.classList.remove('visible');
+      };
+
+      const handleScrollAnimation = () => {
+        scrollElements.forEach((el) => {
+          if (elementInView(el, 1.25)) {
+            displayScrollElement(el);
+          } else {
+            hideScrollElement(el);
+          }
+        });
+      };
+
+      window.addEventListener('scroll', () => {
+        handleScrollAnimation();
+      });
+
+      handleScrollAnimation();
+    });
+  </script>
 
 </body>
 </html>

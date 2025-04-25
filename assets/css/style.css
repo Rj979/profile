@@ -1471,10 +1471,10 @@ textarea.form-input::-webkit-resizer { display: none; }
   }
 
   .avatar-box {
-    width: 80px; /* Adjust to your desired width */
-    height: 140px; /* Adjust to your desired height */
+    width: 120px; /* Increased width */
+    height: 120px; /* Increased height (same as width for a square) */
     overflow: hidden; /* Ensures any overflowing content is clipped */
-    border-radius: 8px; /* Optional: rounds the corners */
+    border-radius: 12px; /* Slightly rounded corners */
   }
   
   .avatar-box img {
@@ -1483,6 +1483,7 @@ textarea.form-input::-webkit-resizer { display: none; }
     object-fit: cover;
     object-position: center;
   }
+  
 
   
   .testimonials-avatar-box {

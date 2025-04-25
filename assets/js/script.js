@@ -30,6 +30,22 @@ document.querySelectorAll("[data-testimonials-item]").forEach(item => {
   });
 });
 
+document.addEventListener('DOMContentLoaded', () => {
+  const certificateImages = document.querySelectorAll('.certificate-item img');
+  certificateImages.forEach(img => {
+    const imageUrl = img.getAttribute('data-src');
+    generateThumbnail(imageUrl, 200, 150)
+      .then(thumbnailUrl => {
+        img.src = thumbnailUrl;
+      })
+      .catch(error => {
+        console.error('Error generating thumbnail:', error);
+      });
+  });
+});
+
+
+
 // Close Modal
 const closeModal = () => {
   elementToggleFunc(modalContainer);
@@ -66,6 +82,13 @@ const filterFunc = selectedValue => {
   });
 };
 
+document.addEventListener('DOMContentLoaded', function() {
+  const filterSelectBox = document.querySelector('.filter-select-box');
+  if (filterSelectBox) {
+    filterSelectBox.remove();
+  }
+});
+
 // Filter Buttons for Large Screens
 const filterBtn = document.querySelectorAll("[data-filter-btn]");
 let lastClickedBtn = filterBtn[0];
@@ -96,6 +119,67 @@ formInputs.forEach(input => {
     }
   });
 });
+
+document.addEventListener('DOMContentLoaded', function () {
+  const scrollElements = document.querySelectorAll('.scroll-animation');
+
+  const elementInView = (el, dividend = 1) => {
+    const elementTop = el.getBoundingClientRect().top;
+    return elementTop <= (window.innerHeight || document.documentElement.clientHeight) / dividend;
+  };
+
+  const displayScrollElement = (element) => {
+    element.classList.add('visible');
+    element.classList.remove('hidden');
+  };
+
+  const hideScrollElement = (element) => {
+    element.classList.add('hidden');
+    element.classList.remove('visible');
+  };
+
+  const handleScrollAnimation = () => {
+    scrollElements.forEach((el) => {
+      if (elementInView(el, 1.25)) {
+        displayScrollElement(el);
+      } else {
+        hideScrollElement(el);
+      }
+    });
+  };
+
+  window.addEventListener('scroll', () => {
+    handleScrollAnimation();
+  });
+
+  handleScrollAnimation();
+});
+
+function generateThumbnail(imageUrl, width, height) {
+  return new Promise((resolve, reject) => {
+    const img = new Image();
+    img.src = imageUrl;
+    img.onload = () => {
+      const canvas = document.createElement('canvas');
+      const ctx = canvas.getContext('2d');
+      const aspectRatio = img.width / img.height;
+      if (aspectRatio > 1) {
+        canvas.width = width;
+        canvas.height = width / aspectRatio;
+      } else {
+        canvas.height = height;
+        canvas.width = height * aspectRatio;
+      }
+      ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+      resolve(canvas.toDataURL('image/webp'));
+    };
+    img.onerror = (error) => {
+      reject(new Error(`Failed to load image: ${imageUrl}`));
+    };
+  });
+}
+
+
 
 // Page Navigation
 const navigationLinks = document.querySelectorAll("[data-nav-link]");

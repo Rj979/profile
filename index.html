@@ -7,12 +7,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Roshan's Portfolio</title>
+  <meta name="description" content="Roshan J | Portfolio of a passionate developer exploring tech, C++, Java, and web/mobile development. Based in Kerala, India.">
 
-  <!-- Cache the stylesheets for 1 month -->
-  <link rel="stylesheet" href="assets/css/style.css?v=1.0.0" />
-  <!--
-    - favicon
-  -->
+
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>  
   <link rel="shortcut icon" href="./assets/images/logo.ico" type="image/x-icon">
 
   <!--
@@ -33,10 +32,6 @@
 </head>
 
 <body>
-
-  <!--
-    - #MAIN
-  -->
 
   <main>
 
@@ -160,13 +155,6 @@
     </aside>
 
 
-
-
-
-    <!--
-      - #main-content
-    -->
-
     <div class="main-content">
 
       <!--
@@ -182,6 +170,10 @@
           </li>
 
           <li class="navbar-item">
+            <button class="navbar-link" data-nav-link>Certificates</button>
+          </li>
+
+          <li class="navbar-item">
             <button class="navbar-link" data-nav-link>Resume</button>
           </li>
 
@@ -190,12 +182,6 @@
       </nav>
 
 
-
-
-
-      <!--
-        - #ABOUT
-      -->
 
       <article class="about  active" data-page="about">
 
@@ -292,22 +278,53 @@
           </ul>
 
         </section>
-
         <div class="modal-container" data-modal-container>
-
           <div class="overlay" data-overlay></div>
-
           <section class="testimonials-modal">
-
             <button class="modal-close-btn" data-modal-close-btn>
               <ion-icon name="close-outline"></ion-icon>
             </button>
+          </section>
+        </div>
+        </section>
   
 
       </article>
 
 
+      <article class="certificates" data-page="certificates">
+        <header>
+          <h2 class="h2 article-title">Certificates</h2>
+        </header>
+        <section class="certificate-gallery">
+          <div class="certificate-item">
+            <a href="./assets/certificates/certificate1.webp" data-lightbox="certificates" data-title="Python for Juniors - ICI CET">
+              <img src="generate-thumbnail.php?img=./assets/certificates/certificate1.webp" alt="Python for Juniors - ICI CET">
+            </a>
+          </div>
+          <div class="certificate-item">
+            <a href="./assets/certificates/certificate2.webp" data-lightbox="certificates" data-title="AI/ML Workshop - NIT Calicut">
+              <img src="generate-thumbnail.php?img=./assets/certificates/certificate2.webp" alt="AI/ML Workshop - NIT Calicut">
+            </a>
+          </div>
+          <div class="certificate-item">
+            <a href="./assets/certificates/certificate3.webp" data-lightbox="certificates" data-title="Unlocking Linux Workshop">
+              <img src="generate-thumbnail.php?img=./assets/certificates/certificate3.webp" alt="Unlocking Linux Workshop">
+            </a>
+          </div>
+          <div class="certificate-item">
+            <a href="./assets/certificates/certificate4.webp" data-lightbox="certificates" data-title="Python for Machine Learning - Verveox Technologies">
+              <img src="generate-thumbnail.php?img=./assets/certificates/certificate4.webp" alt="Python for Machine Learning - Verveox Technologies">
+            </a>
+          </div>
+        </section>
+      </article>
+      
+      
+      
+      
 
+      
 
 
       <!--
@@ -326,52 +343,53 @@
             <div class="icon-box">
               <ion-icon name="book-outline"></ion-icon>
             </div>
-
+        
             <h3 class="h3">Education</h3>
           </div>
-
+        
           <ol class="timeline-list">
-
+        
             <li class="timeline-item">
-
+        
               <h4 class="h4 timeline-item-title">Kendriya Vidyalaya Pattom</h4>
-
+        
               <span>2012 - 2022</span>
-
+        
               <p class="timeline-text">
                 Secondary Education.
               </p>
-
+        
             </li>
-
+        
             <li class="timeline-item">
-
+        
               <h4 class="h4 timeline-item-title">Sarvodaya Central Vidyalaya</h4>
-
+        
               <span>2022 — 2024</span>
-
+        
               <p class="timeline-text">
-                Higher Secondary Education.
+                Higher Secondary Education. Pursued Computer Science stream.
               </p>
-
+        
             </li>
-
+        
             <li class="timeline-item">
-
+        
               <h4 class="h4 timeline-item-title">Rajadhani Institute of Engineering and Technology</h4>
-
+        
               <span>2024 - 2028</span>
-
+        
               <p class="timeline-text">
-                Btech in Computer science
+                BTech in Computer Science.
               </p>
-
+        
             </li>
-
+        
           </ol>
-
+        
         </section>
         
+
 <!-- 
         <section class="timeline">
 
@@ -482,19 +500,15 @@
 
       </article>
 
-          <div class="filter-select-box">
-
-            <button class="filter-select" data-select>
-
-              <div class="select-value" data-select-value>Select category</div>
-
-              <div class="select-icon">
-                <ion-icon name="chevron-down"></ion-icon>
-              </div>
-
-            </button>
-
+      <div class="filter-select-box">
+        <button class="filter-select" data-select>
+          <div class="select-value" data-select-value>Select category</div>
+          <div class="select-icon">
+            <ion-icon name="chevron-down"></ion-icon>
           </div>
+        </button>
+      </div>
+      
 
   </main>
   <footer class="footer">
@@ -552,6 +566,8 @@
       handleScrollAnimation();
     });
   </script>
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
 </body>
 </html>

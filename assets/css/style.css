@@ -94,6 +94,19 @@
 
 }
 
+.thumbnail {
+  width: 110px;
+  height: 88px;
+  object-fit: cover;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+  transition: box-shadow 0.3s;
+}
+
+.thumbnail:hover {
+  box-shadow: 0 0 5px rgba(0, 140, 186, 0.5);
+}
 
 
 footer {

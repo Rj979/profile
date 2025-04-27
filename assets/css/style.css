@@ -353,16 +353,7 @@ main {
   color: var(--white-2) !important;
 }
 
-.avatar-box {
-  background: var(--bg-gradient-onyx);
-  border-radius: 20px;
-}
 
-.avatar-box {
-  position: relative;
-  user-select: none;
-  pointer-events: none;
-}
 
 .avatar-box::after {
   content: "";
@@ -588,7 +579,7 @@ main {
 .service-item-text {
   color: var(--light-gray);
   font-size: var(--fs-6);
-  font-weight: var(--fw-3);
+  font-weight: var(--fw-300);
   line-height: 1.6;
 }
 
@@ -663,6 +654,9 @@ main {
   line-height: 1.6;
 }
 
+.filter-select-box {
+  display: none; /* Remove this line if you want to keep the element but just change the color */
+}
 
 /**
  * skills 
@@ -712,7 +706,9 @@ main {
     /**
      * typography
      */
-
+    .timeline-list span {
+      color: var(--vegas-gold);
+    }
     --fs-1: 32px;
     --fs-2: 24px;
     --fs-3: 26px;
@@ -762,6 +758,15 @@ main {
     margin-top: 60px;
     margin-bottom: 100px;
   }
+
+/* If you want to keep it but change the color */
+.filter-select {
+  color: var(--white-2) !important;
+}
+
+.filter-select .select-icon ion-icon {
+  color: var(--white-2) !important;
+}
 
 
 
@@ -905,7 +910,7 @@ main {
   .sidebar, article { width: 700px; }
 
   .has-scrollbar::-webkit-scrollbar-button { width: 100px; }
-
+}
 
 
   /**
@@ -995,7 +1000,7 @@ main {
 
   article { min-height: 100%; }
 
-
+}
   /**
    * MAIN
    */
@@ -1075,4 +1080,5 @@ main {
 
   .timeline-text { max-width: 700px; }
 
+  
 }
